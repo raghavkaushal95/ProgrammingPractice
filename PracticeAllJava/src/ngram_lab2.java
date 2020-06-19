@@ -1,7 +1,7 @@
 import java.io.*;
 import java.util.*;
 
-
+//This code is used for running unigram,bigram and trigram
 public class ngram_lab2 {
 
 	
