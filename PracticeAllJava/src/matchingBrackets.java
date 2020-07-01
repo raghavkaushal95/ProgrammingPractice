@@ -85,7 +85,7 @@ public class matchingBrackets {
 			}
 			
 		//	System.out.println("Size of List is " + BooleanList.size());
-			if(BooleanList.size()<t+1)
+			if(BooleanList.size()!=t+1)
 			{
 			//	System.out.println("Size of List is " + BooleanList.size());
 				if(stacker.empty()) {
