@@ -112,6 +112,16 @@ public class MobilePhone {
 	}
 	
 	
+	public Contact queryContact(String name)
+    {
+		int position = findContact(name);
+			if(position>=0)
+			{	
+				return myContacts.get(position);
+              }
+		return null;
+    }
+	
 	
 	
 }

@@ -103,6 +103,47 @@ public class MainClassMobile
 	}
 	
 	
+	
+	
+	
+	static void updateContact() 
+	{
+		
+		System.out.println("Enter existing contact Name");
+		String name = scan.nextLine();
+		
+		Contact existingContact = mobilePhone.queryContact(name);
+		if(existingContact== null)
+		{
+			System.out.println("Contact not found");
+			return;
+		}
+		
+		System.out.println("Enter new Contact name");
+		String newName = scan.nextLine();
+		
+		System.out.println("Enter new contact phone number");
+		
+		String newNumber= scan.nextLine();
+		Contact newContact = Contact.createContact(newName,newNumber);
+		
+		if(mobilePhone.updateContact(existingContact,newContact))
+			System.out.println("Contact successfully updated");
+		else
+			System.out.println("Error updating the contact");
+		
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	static void printActions() 
 	{
 		
