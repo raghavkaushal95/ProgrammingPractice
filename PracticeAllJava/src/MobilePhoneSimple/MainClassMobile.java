@@ -20,7 +20,7 @@ public class MainClassMobile
 		 
 	 while(!quit) 
 		 { 
-		 	System.out.println("\n Enter action: ( press 6 to show available actions ");
+		 	System.out.println("\n Enter action: (press 6 to show available actions) ");
 			 int action = Integer.parseInt(scan.nextLine());
 			 
 			 
@@ -51,7 +51,7 @@ public class MainClassMobile
 			           break;
 			           
 			   
-			  case 5: queryContacts();
+			  case 5: queryContact();
 			          break;
 			          
 			  case 6: printActions();
@@ -106,7 +106,7 @@ public class MainClassMobile
 	
 	
 	
-	static void updateContact() 
+	public static void updateContact() 
 	{
 		
 		System.out.println("Enter existing contact Name");
@@ -136,7 +136,58 @@ public class MainClassMobile
 	
 	
 	
+	static void removeContact() 
+	{
+		
+		System.out.println("Enter existing contact Name");
+		String name = scan.nextLine();
+		
+		Contact existingContact = mobilePhone.queryContact(name);
+		if(existingContact== null)
+		{
+			System.out.println("Contact not found");
+			return;
+		}
+		
+		if(mobilePhone.removeContact(existingContact)) 
+		{
+	      System.out.println("Successfully deleted contact");						
+		}
+		else
+		{
+			System.out.println("Error deleting contact");	
+			
+			
+		}
+		
+		
+		
+		
+		
+	}
 	
+	static void queryContact() 
+	{
+		System.out.println("Enter existing contact name ");
+		 String name = scan.nextLine();
+		 
+		 Contact existingContact = mobilePhone.queryContact(name);
+		 
+		 if(existingContact==null)
+		 {
+			 System.out.println("Sorry no contact found");
+			 return;
+			 
+			 
+		 }
+		 
+		 System.out.println("Name: "+ name + ", Phone Number is  :"+existingContact.getPhoneNumber() );
+		 
+		
+		
+		
+		
+	}
 	
 	
 	
@@ -147,7 +198,7 @@ public class MainClassMobile
 	static void printActions() 
 	{
 		
-		System.out.println("\n  available actions:\n press ");
+		System.out.println("\n  available actions:\npress the corresponding number key ");
 		System.out.println("0 - to shutdown phone\n"+
 			               "1 - to print contacts\n"+
 				           "2 - to add a new contact\n"+
@@ -160,6 +211,10 @@ public class MainClassMobile
 			System.out.println("Choose an available action");
 		
 		
+			
+			
+			
+			
 		
 	}
 	
